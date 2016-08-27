@@ -63,6 +63,7 @@ def demo():
     y = [i*i for i in x]
     pl.xlim(-1, 11)  # 限定横轴的范围
     pl.ylim(-1, 110)  # 限定纵轴的范围
+    pl.title(u'图像标题')
     pl.plot(x, y, 'ob-', label=u'y=x^2曲线图')  # 加上label参数添加图例
     pl.legend()  # 让图例生效
     pl.xlabel(u"我是横轴")
