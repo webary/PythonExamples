@@ -51,14 +51,27 @@ def draw_pic(x, y, x_label, y_label):
     else:
         pl.ylim(min(y), max(y))
     pl.plot(x, y, 'ob-', label=u"%s/%s趋势图\n相关性系数R=%.3f" % (x_label, y_label, r))  # 画数据曲线
-    pl.plot(x, pred_y, 'or--')  # 画拟合线
+    pl.plot(x, pred_y, 'or--', label=u'线性回归拟合曲线')  # 画拟合线
     pl.xlabel(x_label)
     pl.ylabel(y_label)
     pl.legend()  # make legend
     pl.show()
 
 
+def demo():
+    x = range(10)+[100]
+    y = [i*i for i in x]
+    pl.xlim(-1, 11)  # 限定横轴的范围
+    pl.ylim(-1, 110)  # 限定纵轴的范围
+    pl.plot(x, y, 'ob-', label=u'y=x^2曲线图')  # 加上label参数添加图例
+    pl.legend()  # 让图例生效
+    pl.xlabel(u"我是横轴")
+    pl.ylabel(u"我是纵轴")
+    pl.show()  # 显示绘制出的图
+
+
 if __name__ == "__main__":
+    demo()
     x = range(10) + [1.5 * i for i in range(5)]
     y = [1.7 * i + 4 * random.random() for i in x]
     print 'x:', x
